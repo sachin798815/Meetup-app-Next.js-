@@ -5,6 +5,7 @@ import Head from "next/head";
 function HomePage(props) {
   return (
     <>
+    {/* import this head and use it here, this is used to add SEO to the app, title is html title, meta also. */}
     <Head>
       <title>Meetups</title>
       <meta
