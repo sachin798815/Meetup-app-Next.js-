@@ -1,10 +1,19 @@
 import { MongoClient, ObjectId } from "mongodb";
+import Head from "next/head";
 
 function MeetupDetails({ meetupData }) {
   if (!meetupData) return <p>Meetup not found!</p>;
 
   return (
     <>
+    <Head>
+      <title>{meetupData.title}</title>
+      <meta
+      name="description"
+      content={meetupData.description}
+      >
+      </meta>
+    </Head>
       <img
         src={meetupData.image}
         alt={meetupData.title}
