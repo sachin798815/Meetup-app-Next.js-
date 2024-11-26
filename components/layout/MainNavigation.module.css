@@ -4,33 +4,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, #4e0d8a, #31006b);
-  padding: 0 5%;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  background: radial-gradient(circle, #3c006e, #29004b);
+  padding: 0 4%;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: all 0.4s ease;
+  transition: background 0.5s ease, box-shadow 0.4s ease;
 }
 
 .header:hover {
-  background: linear-gradient(90deg, #31006b, #4e0d8a);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  background: radial-gradient(circle, #29004b, #3c006e);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: #ffffff;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.4s ease, color 0.3s ease;
 }
 
 .logo:hover {
-  transform: scale(1.15);
-  color: #f3c1ff;
+  transform: scale(1.2) rotate(3deg);
+  color: #d1a4ff;
 }
 
 .header ul {
@@ -49,42 +49,44 @@
 .header a {
   text-decoration: none;
   font-size: 1.6rem;
-  font-weight: 600;
-  color: #c1a4ff;
-  padding: 0.6rem 1.5rem;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  font-weight: 700;
+  color: #c8a9ff;
+  padding: 0.7rem 1.8rem;
+  border: 1px solid rgba(200, 169, 255, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
   transition: all 0.4s ease, transform 0.3s ease;
 }
 
 .header a:hover,
 .header a:focus,
 .header a.active {
-  color: #31006b;
-  background: #c1a4ff;
+  color: #29004b;
+  background: #c8a9ff;
   border-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(193, 164, 255, 0.5);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(200, 169, 255, 0.5);
 }
 
 .header a::after {
   content: "";
   display: block;
   height: 4px;
-  background-color: #c1a4ff;
+  background-color: #c8a9ff;
   width: 0;
   margin: auto;
-  transition: width 0.4s ease;
+  border-radius: 2px;
+  transition: width 0.4s ease, background-color 0.3s ease;
 }
 
 .header a:hover::after {
   width: 100%;
+  background-color: #ffffff;
 }
 
 .header a:focus-visible {
-  outline: 3px solid #f3c1ff;
-  outline-offset: 4px;
+  outline: 4px solid #d1a4ff;
+  outline-offset: 5px;
 }
 
 @media (max-width: 768px) {
@@ -94,7 +96,7 @@
   }
 
   .logo {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .header ul {
@@ -103,6 +105,6 @@
 
   .header a {
     font-size: 1.4rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.2rem;
   }
 }
