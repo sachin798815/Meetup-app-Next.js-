@@ -1,110 +1,39 @@
-.header {
-  width: 100%;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: radial-gradient(circle, #3c006e, #29004b);
-  padding: 0 4%;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background 0.5s ease, box-shadow 0.4s ease;
-}
 
-.header:hover {
-  background: radial-gradient(circle, #29004b, #3c006e);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.header {
+  background-color: #4caf50;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
 .logo {
-  font-size: 3.2rem;
-  color: #ffffff;
-  font-weight: 900;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  cursor: pointer;
-  transition: transform 0.4s ease, color 0.3s ease;
 }
 
-.logo:hover {
-  transform: scale(1.2) rotate(3deg);
-  color: #d1a4ff;
-}
-
-.header ul {
+nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: center;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
-.header li {
-  position: relative;
+nav ul li {
+  margin: 0;
 }
 
-.header a {
+nav ul li a {
   text-decoration: none;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #c8a9ff;
-  padding: 0.7rem 1.8rem;
-  border: 1px solid rgba(200, 169, 255, 0.5);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  transition: all 0.4s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+  color: white;
 }
 
-.header a:hover,
-.header a:focus,
-.header a.active {
-  color: #29004b;
-  background: #c8a9ff;
-  border-color: #ffffff;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 15px rgba(200, 169, 255, 0.5);
-}
-
-.header a::after {
-  content: "";
-  display: block;
-  height: 4px;
-  background-color: #c8a9ff;
-  width: 0;
-  margin: auto;
-  border-radius: 2px;
-  transition: width 0.4s ease, background-color 0.3s ease;
-}
-
-.header a:hover::after {
-  width: 100%;
-  background-color: #ffffff;
-}
-
-.header a:focus-visible {
-  outline: 4px solid #d1a4ff;
-  outline-offset: 5px;
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding: 0 3%;
-    height: 4.5rem;
-  }
-
-  .logo {
-    font-size: 2.8rem;
-  }
-
-  .header ul {
-    gap: 2rem;
-  }
-
-  .header a {
-    font-size: 1.4rem;
-    padding: 0.5rem 1.2rem;
-  }
+nav ul li a:hover,
+nav ul li a:active {
+  color: #a5d6a7;
 }
