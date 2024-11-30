@@ -4,8 +4,23 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 90%;
   width: 60rem;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .list {
+    gap: 1.5rem;
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
 }
