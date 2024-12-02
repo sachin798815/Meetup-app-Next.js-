@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background: linear-gradient(135deg, #f0f4f8, #d9e6f3);
+  background: linear-gradient(145deg, #e0eaff, #f8faff);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dce6f3;
 }
 
 .control {
@@ -16,24 +17,27 @@
 .control label {
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #2b2b2b;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .control input,
 .control textarea {
   font: inherit;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  padding: 0.8rem;
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #ffffff, #f5f9fc);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .control input:focus,
 .control textarea:focus {
   outline: none;
   border-color: #0070f3;
-  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
-  background: linear-gradient(135deg, #ffffff, #e8f4ff);
+  box-shadow: 0 4px 8px rgba(0, 112, 243, 0.3);
+  background: linear-gradient(145deg, #ffffff, #eaf4ff);
 }
 
 .actions {
@@ -45,20 +49,26 @@
 .actions button {
   font: inherit;
   cursor: pointer;
-  padding: 0.5rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   border: none;
-  border-radius: 4px;
-  background: linear-gradient(135deg, #0070f3, #005bb5);
+  border-radius: 8px;
+  background: linear-gradient(145deg, #0070f3, #005bb5);
   color: white;
-  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .actions button:hover {
-  background: linear-gradient(135deg, #005bb5, #003f8a);
-  transform: scale(1.05);
+  background: linear-gradient(145deg, #005bb5, #004494);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 .actions button:active {
-  background: linear-gradient(135deg, #003f8a, #002a5e);
-  transform: scale(1);
+  background: linear-gradient(145deg, #004494, #002f73);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
 }
