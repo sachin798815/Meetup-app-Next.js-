@@ -1,5 +1,5 @@
 .header {
-  background: linear-gradient(135deg, #6a1b9a, #283593);
+  background: linear-gradient(135deg, #5e35b1, #1e88e5); 
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-  background: linear-gradient(135deg, #ff8a80, #82b1ff);
+  background: linear-gradient(135deg, #ff6f61, #4fc3f7); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -38,22 +38,23 @@ nav ul li a {
   text-decoration: none;
   font-size: 1.2rem;
   color: #ffffff;
-  background: linear-gradient(135deg, #c5cae9, #ffccbc);
+  background: linear-gradient(135deg, #b39ddb, #ffab91);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: background-position 0.3s ease, text-shadow 0.3s ease;
+  transition: transform 0.3s ease, background-position 0.3s ease, text-shadow 0.3s ease;
   background-size: 200% 200%;
 }
 
 nav ul li a:hover,
 nav ul li a:active {
   background-position: right center;
-  color: #ffffff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transform: scale(1.1); 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive Design */
+
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -75,7 +76,7 @@ nav ul li a:active {
   nav ul li a {
     display: block;
     width: 100%;
-    padding: 0.5rem 0;
+    padding: 0.7rem 0; 
     text-align: left;
     font-size: 1.1rem;
   }
