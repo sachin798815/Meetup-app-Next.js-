@@ -21,16 +21,16 @@
   -webkit-text-fill-color: transparent;
 }
 
-nav ul {
+/* nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 1.5rem;
   align-items: center;
-}
+} */
 
-nav ul li {
+/* nav ul li {
   margin: 0;
 }
 
@@ -80,4 +80,4 @@ nav ul li a:active {
     text-align: left;
     font-size: 1.1rem;
   }
-}
+} */
