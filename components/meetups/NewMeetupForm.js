@@ -20,6 +20,10 @@ function NewMeetupForm(props) {
 
     props.onAddMeetup(meetupData);
 
+    setEnteredTitle('');
+    setEnteredImage('');
+    setEnteredAddress('');
+    setEnteredDescription('');
   }
 
   return (
