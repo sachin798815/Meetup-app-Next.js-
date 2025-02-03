@@ -15,7 +15,8 @@
   margin-bottom: 0.5rem;
 }
 
-.control input{
+.control input,
+.control textarea {
   font: inherit;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -37,3 +38,7 @@
   transition: background-color 0.3s ease;
 }
 
+.actions button:hover,
+.actions button:active {
+  background-color: #ff3366;
+}
