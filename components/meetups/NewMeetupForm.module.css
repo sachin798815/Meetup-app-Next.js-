@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -41,16 +41,16 @@
 }
 
 .actions button {
-  background-color: #ff0055;
+  background: linear-gradient(135deg, #ff3366, #ff0055);
   color: white;
   border: none;
   padding: 0.75rem 2rem;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 6px;
-  transition: background-color 0.3s;
+  transition: background 0.3s;
 }
 
 .actions button:hover {
-  background-color: #cc0044;
+  background: linear-gradient(135deg, #dd0033, #cc0044);
 }
