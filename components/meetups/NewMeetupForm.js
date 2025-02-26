@@ -11,9 +11,17 @@ function NewMeetupForm({ onAddMeetup }) {
   });
 
   function handleChange(event) {
+    const { name, value } = event.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   }
 
   function handleSubmit(event) {
+    event.preventDefault();
+    onAddMeetup(formData);
+    setFormData({ title: '', image: '', address: '', description: '' });
   }
 
   return (
