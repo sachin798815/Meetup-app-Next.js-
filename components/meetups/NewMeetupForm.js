@@ -2,73 +2,33 @@ import { useState } from 'react';
 import Card from '../ui/Card';
 import classes from './NewMeetupForm.module.css';
 
-function NewMeetupForm(props) {
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredImage, setEnteredImage] = useState('');
-  const [enteredAddress, setEnteredAddress] = useState('');
-  const [enteredDescription, setEnteredDescription] = useState('');
+function NewMeetupForm({ onAddMeetup }) {
+  const [formData, setFormData] = useState({
+    title: '',
+    image: '',
+    address: '',
+    description: ''
+  });
 
-  function submitHandler(event) {
-    event.preventDefault();
+  function handleChange(event) {
+  }
 
-    const meetupData = {
-      title: enteredTitle,
-      image: enteredImage,
-      address: enteredAddress,
-      description: enteredDescription,
-    };
-
-    props.onAddMeetup(meetupData);
-
-    setEnteredTitle('');
-    setEnteredImage('');
-    setEnteredAddress('');
-    setEnteredDescription('');
+  function handleSubmit(event) {
   }
 
   return (
     <Card>
-      <form className={classes.form} onSubmit={submitHandler}>
-        <div className={classes.control}>
-          <label htmlFor="title">Meetup Title</label>
-          <input 
-            type="text" 
-            required 
-            id="title" 
-            value={enteredTitle} 
-            onChange={(event) => setEnteredTitle(event.target.value)} 
-          />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="image">Meetup Image</label>
-          <input 
-            type="url" 
-            required 
-            id="image" 
-            value={enteredImage} 
-            onChange={(event) => setEnteredImage(event.target.value)} 
-          />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="address">Address</label>
-          <input 
-            type="text" 
-            required 
-            id="address" 
-            value={enteredAddress} 
-            onChange={(event) => setEnteredAddress(event.target.value)} 
-          />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="description">Description</label>
-          <textarea
-            id="description"
-            required
-            rows="5"
-            value={enteredDescription}
-            onChange={(event) => setEnteredDescription(event.target.value)}
-          ></textarea>
-        </div>
+      <form className={classes.form} onSubmit={handleSubmit}>
+        {['title', 'image', 'address', 'description'].map(field => (
+          <div key={field} className={classes.control}>
+            <label htmlFor={field}>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
+            {field === 'description' ? (
+              <textarea id={field} name={field} required rows="5" value={formData[field]} onChange={handleChange} />
+            ) : (
+              <input type={field === 'image' ? 'url' : 'text'} id={field} name={field} required value={formData[field]} onChange={handleChange} />
+            )}
+          </div>
+        ))}
         <div className={classes.actions}>
           <button type="submit">Add Meetup</button>
         </div>
