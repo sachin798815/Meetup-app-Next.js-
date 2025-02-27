@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Card from '../ui/Card';
 import classes from './NewMeetupForm.module.css';
 
-function NewMeetupForm({ onAddMeetup }) {
+const NewMeetupForm = ({ onAddMeetup }) => {
   const [formData, setFormData] = useState({
     title: '',
     image: '',
@@ -10,19 +10,19 @@ function NewMeetupForm({ onAddMeetup }) {
     description: ''
   });
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData(prevState => ({
       ...prevState,
       [name]: value
     }));
-  }
+  };
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     onAddMeetup(formData);
     setFormData({ title: '', image: '', address: '', description: '' });
-  }
+  };
 
   return (
     <Card>
@@ -43,6 +43,6 @@ function NewMeetupForm({ onAddMeetup }) {
       </form>
     </Card>
   );
-}
+};
 
 export default NewMeetupForm;
