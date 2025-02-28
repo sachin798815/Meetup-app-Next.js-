@@ -1,56 +1,40 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+  padding: 1.5rem;
 }
 
 .control {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
 }
 
 .control label {
   font-weight: bold;
-  font-size: 1.1rem;
-  color: #333;
+  margin-bottom: 0.5rem;
 }
 
 .control input,
 .control textarea {
-  width: 100%;
-  padding: 0.75rem;
+  font: inherit;
+  padding: 0.5rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
+  border-radius: 4px;
 }
 
-.control input:focus,
-.control textarea:focus {
-  border-color: #ff0055;
-  outline: none;
-}
 
 .actions {
   text-align: right;
 }
 
 .actions button {
-  background: linear-gradient(135deg, #ff3366, #ff0055);
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.3s;
+  font-size: 1rem;
 }
 
-.actions button:hover {
-  background: linear-gradient(135deg, #dd0033, #cc0044);
-}
