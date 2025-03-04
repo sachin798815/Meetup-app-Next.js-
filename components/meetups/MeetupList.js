@@ -8,13 +8,16 @@ function MeetupList({ meetups = [] }) {
       {meetups.length === 0 ? (
         <p className={classes.empty}>No meetups available. Stay tuned for updates!</p>
       ) : (
-        <ul className={classes.list}>
-          {meetups.map(({ id, ...meetupProps }) => (
-            <li key={id} className={classes.item}>
-              <MeetupItem id={id} {...meetupProps} />
-            </li>
-          ))}
-        </ul>
+        <>
+          <p className={classes.count}>Total Meetups: {meetups.length}</p>
+          <ul className={classes.list}>
+            {meetups.map(({ id, ...meetupProps }) => (
+              <li key={id} className={classes.item}>
+                <MeetupItem id={id} {...meetupProps} />
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </section>
   );
