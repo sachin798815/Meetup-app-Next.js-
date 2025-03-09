@@ -4,7 +4,8 @@ import classes from './MeetupList.module.css';
 
 function EmptyState() {
   return (
-    <div role="status">
+    <div role="status" className={classes.emptyContainer}>
+      <img src="/no-meetups.svg" alt="No meetups available" className={classes.emptyImage} />
       <p className={classes.empty}>No meetups available. Stay tuned for updates!</p>
     </div>
   );
