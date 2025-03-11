@@ -6,13 +6,15 @@ const NewMeetupForm = ({ onAddMeetup }) => {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [address, setAddress] = useState('');
+  const [description, setDescription] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onAddMeetup({ title, image, address});
+    onAddMeetup({ title, image, address, description });
     setTitle('');
     setImage('');
     setAddress('');
+    setDescription('');
   };
 
   return (
@@ -31,6 +33,11 @@ const NewMeetupForm = ({ onAddMeetup }) => {
         <div className={classes.control}>
           <label htmlFor="address">Address</label>
           <input id="address" type="text" value={address} onChange={(e) => setAddress(e.target.value)} required />
+        </div>
+
+        <div className={classes.control}>
+          <label htmlFor="description">Description</label>
+          <textarea id="description" rows="5" value={description} onChange={(e) => setDescription(e.target.value)} required />
         </div>
 
         <div className={classes.actions}>
