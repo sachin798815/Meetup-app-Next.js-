@@ -2,10 +2,35 @@ import { useState, useRef } from 'react';
 import Card from '../ui/Card';
 import classes from './NewMeetupForm.module.css';
 
-const NewMeetupForm = ({ onAddMeetup }) => {
-  const titleInputRef = useRef(null); // Ref for focusing on title input after form submission
+const InputField = ({ field, value, onChange, inputRef }) => (
+  <div className={classes.control}>
+    <label htmlFor={field}>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
+    {field === 'description' ? (
+      <textarea
+        id={field}
+        name={field}
+        required
+        rows="5"
+        value={value}
+        onChange={onChange}
+      />
+    ) : (
+      <input
+        ref={inputRef}
+        type={field === 'imageUrl' ? 'url' : 'text'}
+        id={field}
+        name={field}
+        required
+        value={value}
+        onChange={onChange}
+      />
+    )}
+  </div>
+);
 
-  // State to manage form inputs
+const NewMeetupForm = ({ onAddMeetup }) => {
+  const titleInputRef = useRef(null);
+
   const [formData, setFormData] = useState({
     title: '',
     imageUrl: '',
@@ -13,7 +38,6 @@ const NewMeetupForm = ({ onAddMeetup }) => {
     description: ''
   });
 
-  // Handle input changes and update state
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
@@ -22,15 +46,13 @@ const NewMeetupForm = ({ onAddMeetup }) => {
     }));
   };
 
-  // Handle form submission
   const handleFormSubmit = (event) => {
     event.preventDefault();
     onAddMeetup(formData);
     setFormData({ title: '', imageUrl: '', address: '', description: '' });
-    titleInputRef.current.focus(); // Move focus back to title input
+    titleInputRef.current.focus();
   };
 
-  // Check if all fields are filled
   const isFormValid = Object.values(formData).every((value) => value.trim() !== '');
 
   return (
@@ -38,30 +60,14 @@ const NewMeetupForm = ({ onAddMeetup }) => {
       <form className={classes.form} onSubmit={handleFormSubmit}>
         <h2>Create a New Meetup</h2>
 
-        {['title', 'imageUrl', 'address', 'description'].map((field, index) => (
-          <div key={field} className={classes.control}>
-            <label htmlFor={field}>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
-            {field === 'description' ? (
-              <textarea
-                id={field}
-                name={field}
-                required
-                rows="5"
-                value={formData[field]}
-                onChange={handleInputChange}
-              />
-            ) : (
-              <input
-                ref={index === 0 ? titleInputRef : null}
-                type={field === 'imageUrl' ? 'url' : 'text'}
-                id={field}
-                name={field}
-                required
-                value={formData[field]}
-                onChange={handleInputChange}
-              />
-            )}
-          </div>
+        {Object.keys(formData).map((field, index) => (
+          <InputField
+            key={field}
+            field={field}
+            value={formData[field]}
+            onChange={handleInputChange}
+            inputRef={index === 0 ? titleInputRef : null}
+          />
         ))}
 
         <div className={classes.actions}>
