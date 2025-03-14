@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import Card from '../ui/Card';
 import classes from './NewMeetupForm.module.css';
 
@@ -6,14 +6,7 @@ const InputField = ({ field, value, onChange, inputRef }) => (
   <div className={classes.control}>
     <label htmlFor={field}>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
     {field === 'description' ? (
-      <textarea
-        id={field}
-        name={field}
-        required
-        rows="5"
-        value={value}
-        onChange={onChange}
-      />
+      <textarea id={field} name={field} required rows="5" value={value} onChange={onChange} />
     ) : (
       <input
         ref={inputRef}
@@ -38,20 +31,20 @@ const NewMeetupForm = ({ onAddMeetup }) => {
     description: ''
   });
 
-  const handleInputChange = (event) => {
+  const handleInputChange = useCallback((event) => {
     const { name, value } = event.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  }, []);
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    onAddMeetup(formData);
-    setFormData({ title: '', imageUrl: '', address: '', description: '' });
-    titleInputRef.current.focus();
-  };
+  const handleFormSubmit = useCallback(
+    (event) => {
+      event.preventDefault();
+      onAddMeetup(formData);
+      setFormData({ title: '', imageUrl: '', address: '', description: '' });
+      titleInputRef.current.focus();
+    },
+    [onAddMeetup, formData]
+  );
 
   const isFormValid = Object.values(formData).every((value) => value.trim() !== '');
 
