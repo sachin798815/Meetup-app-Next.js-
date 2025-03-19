@@ -64,3 +64,13 @@ button:disabled {
   background: #ccc;
   cursor: not-allowed;
 }
+
+@media (max-width: 600px) {
+  .form {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
