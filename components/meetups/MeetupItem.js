@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import Card from '../ui/Card';
+import classes from './MeetupItem.module.css';
 
 function MeetupItem({ id, image, title, address }) {
   const router = useRouter();
@@ -10,12 +10,18 @@ function MeetupItem({ id, image, title, address }) {
   };
 
   return (
-    <li>
+    <li className={classes.item}>
       <Card>
-        <Image src={image} alt={title} width={400} height={250} />
-        <h3>{title}</h3>
-        <p>{address}</p>
-        <button onClick={showDetailsHandler}>Show Details</button>
+        <div className={classes.image}>
+          <img src={image} alt={title} />
+        </div>
+        <div className={classes.content}>
+          <h3>{title}</h3>
+          <address>{address}</address>
+        </div>
+        <div className={classes.actions}>
+          <button onClick={showDetailsHandler}>Show Details</button>
+        </div>
       </Card>
     </li>
   );
