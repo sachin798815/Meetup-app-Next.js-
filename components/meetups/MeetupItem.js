@@ -1,11 +1,15 @@
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
 import Image from 'next/image';
+import Card from '../ui/Card';
+import classes from './MeetupItem.module.css';
 
 function MeetupItem({ id, image, title, address }) {
   const router = useRouter();
 
-  const showDetailsHandler = () => {
+  const showDetailsHandler = useCallback(() => {
     router.push(`/${id}`);
-  };
+  }, [id, router]);
 
   return (
     <li className={classes.item}>
@@ -28,3 +32,5 @@ function MeetupItem({ id, image, title, address }) {
     </li>
   );
 }
+
+export default MeetupItem;
