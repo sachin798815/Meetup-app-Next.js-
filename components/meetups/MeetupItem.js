@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import Image from 'next/image';
 import Card from '../ui/Card';
+import ShowDetailsButton from '../ui/ShowDetailsButton';
 import classes from './MeetupItem.module.css';
 
 function MeetupItem({ id, image, title, address }) {
@@ -23,9 +24,7 @@ function MeetupItem({ id, image, title, address }) {
             <address>{address}</address>
           </div>
           <div className={classes.actions}>
-            <button onClick={showDetailsHandler} className={classes.button} aria-label={`View details of ${title}`}>
-              Show Details
-            </button>
+            <ShowDetailsButton onClick={showDetailsHandler} title={title} />
           </div>
         </article>
       </Card>
