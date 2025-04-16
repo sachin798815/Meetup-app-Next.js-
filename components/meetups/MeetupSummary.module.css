@@ -6,3 +6,7 @@
     padding: 2rem;
     border-radius: 10px;
   }
+  .summary h1 {
+    font-size: 2.5rem;
+    color: #2c2c2c;
+  }
