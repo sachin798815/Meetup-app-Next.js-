@@ -10,3 +10,8 @@
     font-size: 2.5rem;
     color: #2c2c2c;
   }
+
+  .summary p {
+    font-size: 1.2rem;
+    color: #555;
+  }
