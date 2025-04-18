@@ -1,4 +1,5 @@
 import MeetupList from "../components/meetups/MeetupList";
+import MeetupSummary from "../components/meetups/MeetupSummary";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
 
@@ -15,6 +16,7 @@ function HomePage(props) {
       </meta>
     </Head>
       <MeetupList meetups={props.meetups} />
+      <MeetupSummary/>
     </>
   );
 }
