@@ -1,0 +1,9 @@
+.section {
+    border-radius: 10px;
+    max-width: 40rem;
+    background-color: #fafafa;
+  }
+  
+  h2 {
+    color: #333;
+  }
