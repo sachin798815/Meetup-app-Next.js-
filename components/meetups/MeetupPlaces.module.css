@@ -7,3 +7,12 @@
   h2 {
     color: #333;
   }
+
+  ul {
+    list-style: none;
+  }
+  
+  li {
+    background: #f4f0fa;
+    border-radius: 5px;
+  }
