@@ -10,9 +10,12 @@
 
   ul {
     list-style: none;
+    padding: 0;
   }
   
   li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
     background: #f4f0fa;
     border-radius: 5px;
   }
