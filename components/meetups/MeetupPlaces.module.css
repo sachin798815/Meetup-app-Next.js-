@@ -1,23 +1,26 @@
 .section {
-    border-radius: 10px;
-    max-width: 40rem;
-    background-color: #fafafa;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 40rem;
+  background-color: #904e4e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    background: #f4f0fa;
-    border-radius: 5px;
-  }
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #242424;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: #f4f0fa;
+  border-radius: 5px;
+}
