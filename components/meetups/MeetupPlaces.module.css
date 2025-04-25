@@ -4,7 +4,7 @@
   border-radius: 10px;
   max-width: 40rem;
   background-color: #f9f9ff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
 }
 
 h2 {
@@ -26,7 +26,7 @@ li {
 }
 
 .loading {
-  color: #555;
+  color: #523333;
   font-style: italic;
 }
 
