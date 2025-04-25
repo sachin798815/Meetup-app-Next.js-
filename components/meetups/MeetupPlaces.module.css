@@ -3,14 +3,14 @@
   padding: 1.5rem;
   border-radius: 10px;
   max-width: 40rem;
-  background-color: #904e4e;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9ff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
 }
 
 h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #242424;
+  color: #2c3e50;
 }
 
 ul {
@@ -19,8 +19,18 @@ ul {
 }
 
 li {
+  padding: 0.75rem;
   margin: 0.5rem 0;
-  padding: 0.5rem;
-  background: #f4f0fa;
-  border-radius: 5px;
+  background: #eef;
+  border-radius: 6px;
+}
+
+.loading {
+  color: #555;
+  font-style: italic;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
 }
