@@ -1,37 +1,54 @@
 .section {
-  margin: 2rem auto;
-  padding: 1.5rem;
-  border-radius: 10px;
-  max-width: 40rem;
-  background-color: #f9f9ff;
-  border: black;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.07);
+  margin: 3rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 li {
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  background: #eef;
-  border-radius: 6px;
+  background: #f0f4ff;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  cursor: pointer;
 }
 
-.loading {
-  color: #523333;
-  font-style: italic;
+li:hover {
+  background: #dbe6ff;
+}
+
+.loading,
+.error,
+.empty {
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 2rem;
 }
 
 .error {
-  color: red;
+  color: #e74c3c;
   font-weight: bold;
+}
+
+.population {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.3rem;
 }
