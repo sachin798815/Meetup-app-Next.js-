@@ -2,15 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #007bff;
-  color: white;
+  padding: 1.5rem 2.5rem;
+  background-color: #1e293b; /* dark slate */
+  color: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #38bdf8; /* sky blue */
 }
+
 
 nav ul {
   list-style: none;
