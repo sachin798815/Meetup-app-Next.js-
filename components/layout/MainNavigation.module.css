@@ -18,18 +18,25 @@
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
-  color: white;
+  color: #cbd5e1;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 2px;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #ffffff;
+  border-bottom: 2px solid #38bdf8;
 }
+
 
 .active {
   text-decoration: underline;
